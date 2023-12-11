@@ -121,3 +121,14 @@ try {
     console.error(err.code);
     console.error(err.message);
   }
+
+  // Creating and writing info.txt file
+try {
+    const filePath = path.join(__dirname, "test", "info.txt");
+  
+    fs.writeFileSync(filePath, "This is being run on a Windows computer!");
+  } catch (err) {
+    console.error(err.code);
+    console.error(err.message);
+  }
+  
