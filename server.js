@@ -62,3 +62,34 @@ try {
     console.error(err.message);
   }
 
+      // Create about folder
+
+try {
+    fs.mkdirSync(path.join(__dirname, "client", "about"));
+  } catch (err) {
+    console.error("Error code :", err.code);
+    console.error(err.message);
+  }
+  
+  // Creating and writing index.html and style.css
+  try {
+    const filePath = path.join(__dirname, "client", "about", "index.html");
+  
+    fs.writeFileSync(filePath, "<head><link href='style.css' rel='stylesheet'></head>");
+  
+    fs.appendFileSync(filePath, "<body><h1>This is the about me page</h1></body>");
+  } catch (err) {
+    console.error(err.code);
+    console.error(err.message);
+  }
+
+  try {
+    const filePath = path.join(__dirname, "client", "about", "style.css");
+  
+    fs.writeFileSync(filePath, "body {background-color: red}");
+  } catch (err) {
+    console.error(err.code);
+    console.error(err.message);
+  }
+
+
